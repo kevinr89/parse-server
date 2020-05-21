@@ -57,6 +57,7 @@ function getDatabaseConnection(appId: string, collectionPrefix: string) {
   var dbURI = (appDatabaseURIs[appId] ? appDatabaseURIs[appId] : databaseURI);
 
   let storageAdapter = new adapter(dbURI, appDatabaseOptions[appId]);
+  console.log("PARSE SERVER MONGODB OPTIONS", appDatabaseOptions[appId]);
   dbConnections[appId] = new DatabaseController(storageAdapter, {
     collectionPrefix: collectionPrefix
   });
